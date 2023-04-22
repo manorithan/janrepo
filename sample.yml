@@ -1,0 +1,8 @@
+- hosts: webservers
+  gather_facts: no
+  become: yes
+  tasks:
+    - name: Ansible copy file to a remote server
+      copy:
+        src: sample.txt
+        dest: /tmp
