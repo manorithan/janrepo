@@ -64,7 +64,7 @@ AMI_ID = "ami-08f54b258788948e1"
         echo "[webservers]" >> dev.inv
         echo "`cat ip.txt` ansible_user=ec2-user" >> dev.inv
         """
-        ansiblePlaybook credentialsId: 'private-key', disableHostKeyChecking: true, installation: 'ansible2', inventory: 'dev.inv', playbook: 'sample.yml'
+        ansiblePlaybook credentialsId: 'private-key', disableHostKeyChecking: true, installation: 'ansible2', inventory: 'dev.inv', playbook: 'myroles.yml'
      }    
     }
   }

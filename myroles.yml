@@ -1,0 +1,21 @@
+---
+- name: use role playbook
+  hosts: webservers
+  gather_facts: yes
+  become: true
+
+  roles:
+    - role: motd
+      system_manager: admin@golinuxcloud.com
+    - role: 
+      name: mysql
+    - role: 
+      name: nginx
+    - role: 
+      name: ntp
+    - role: 
+      name: openjdk
+    - role: 
+      name: openldap
+    - role: 
+      name: openssh
