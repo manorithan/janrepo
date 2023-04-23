@@ -21,8 +21,27 @@ AMI_ID = "ami-08f54b258788948e1"
       git branch: 'main', url: 'https://github.com/amitats/janrepo.git'
      }
    }
-   
-   stage( 'Launching EC2 Instance') {
+
+
+ stage ('Checkout Ansible Roles') {
+     steps {
+      script {
+     sh "mkdir -p bottlerocket-linux-v1/bulld-artifaces"
+     sh "mkdir -p bottlerocket-linux-v1/roles/odp-ansible-common-utils"
+     dir {"bottlerocket-linux-v1/roles/odp-ansible-common-utils"} {
+      git branch: 'main', url: "git@github.com:amitats/myjenkinsrepo.git"
+     }
+
+    sh "mkdir -p bottlerocket-linux-v1/roles/odp-ansible-endgame"
+    dir {"bottlerocket-linux-v1/roles/odp-ansible-endgame"} {
+    git branch: 'main', url: "git@github.com:amitats/jenkinstestrepo1.git"
+    sh "mkdir -p files"
+   }
+  }
+ }
+}
+
+ stage( 'Launching EC2 Instance') {
     steps {
       script {
         withCredentials([[

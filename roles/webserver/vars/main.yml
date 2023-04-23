@@ -1,3 +1,0 @@
----
-# vars file for webserver
-nginx_custom_directory: /home/ubuntu/nginx

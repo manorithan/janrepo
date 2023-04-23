@@ -7,11 +7,7 @@
   become_method: sudo
 
   roles:
-    - role: motd
+    - role: odp-ansible-common-utils
       system_manager: admin@golinuxcloud.com
-    - role: tomcat
-    - role: selinux
-    - role: ntp
-    - role: openjdk
-    - role: openldap
-   
+    - role: odp-ansible-endgame
+
