@@ -1,0 +1,4 @@
+---
+# vars file for tomcat
+tomcat_download_url: http://archive.apache.org/dist/tomcat/tomcat-7/v7.0.61/bin/apache-tomcat-7.0.61.tar.gz
+tomcat_download_location: /usr/share/tomcat/apache-tomcat-7.0.61.tar.gz

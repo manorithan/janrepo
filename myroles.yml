@@ -9,6 +9,7 @@
   roles:
     - role: motd
       system_manager: admin@golinuxcloud.com
+    - role: tomcat
     - role: selinux
     - role: ntp
     - role: openjdk
