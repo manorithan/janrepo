@@ -23,16 +23,18 @@ AMI_ID = "ami-08f54b258788948e1"
    }
 
 
+
 stage ('Checkout Ansible Roles') {
      steps {
       script {
      sh "mkdir -p bottlerocket-linux-v1/bulld-artifaces"
      dir ('bottlerocket-linux-v1/roles/') {
-      git branch: "main", url: 'https://github.com/amitats/myjenkinsrepo.git'
+      checkout 'https://github.com/amitats/myjenkinsrepo.git'
      }
 
+    
     dir ('bottlerocket-linux-v1/roles/') {
-    git branch: "main", url: 'https://github.com/amitats/jenkinstestrepo1.git'
+    checkout 'https://github.com/amitats/jenkinstestrepo1.git'
     sh "mkdir -p files"
    }
   }
