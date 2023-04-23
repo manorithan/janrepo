@@ -3,19 +3,16 @@
 
 - name: install | Check if openssh local file is already configured.
   stat: path={{ openssh_file_path }}
-  connection: local
   run_once: yes
   register: openssh_file_result
   
 - name: install | Create software directory.
   file: path={{ software_files_path }} state=directory
-  connection: local
   run_once: yes
   when: not openssh_file_result.stat.exists
 
 - name: install | Download openssh file.
   get_url: url={{ openssh_file_url }} dest={{ openssh_file_path }} validate_certs=no
-  connection: local
   run_once: yes
   when: not openssh_file_result.stat.exists
 
