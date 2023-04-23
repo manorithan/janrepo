@@ -9,9 +9,9 @@
   roles:
     - role: motd
       system_manager: admin@golinuxcloud.com
-    - webserver
-    - selinux
-    - mysql
+    - role: webserver
+    - role: selinux
+    - role: mysql
     - role: ntp
     - role: openjdk
     - role: openldap
