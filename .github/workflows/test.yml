@@ -1,4 +1,4 @@
-name: CI Pipeline1
+name: CI Pipeline
 
 on:
   push:
@@ -21,7 +21,22 @@ jobs:
       - name: Install Dependencies
         run: |
           npm install
-
+      
       - name: Run Frontend Tests
         run: |
           npm test
+      
+      - name: Setup Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.8
+      
+      - name: Install Python Dependencies
+        run: |
+          cd backend
+          pip install -r requirements.txt
+      
+      - name: Run Backend Tests
+        run: |
+          cd backend
+          python -m unittest discover
