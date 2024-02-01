@@ -5,7 +5,7 @@ metadata:
   name: demo-react-app
 spec:
   #the Number of Pods
-  replicas: 3
+  replicas: 4
   selector:
     matchLabels:
       app: demo-react-app
